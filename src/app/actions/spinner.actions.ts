@@ -10,7 +10,7 @@ export class SpinnerShow implements Action {
 }
 
 export class SpinnerHide implements Action {
-  readonly type = SpinnerActionTypes.Show;
+  readonly type = SpinnerActionTypes.Hide;
 }
 
 export type SpinnerActions = SpinnerShow | SpinnerHide;

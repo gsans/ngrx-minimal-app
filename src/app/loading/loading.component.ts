@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import * as fromStore from '../reducers/index';
 import { SpinnerShow } from '../actions/spinner.actions';
 import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-loading',
@@ -17,7 +18,9 @@ export class LoadingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loading = this.store.select('spinner');
+    this.loading = this.store.pipe(
+      map(state => state.spinner)
+    );
   }
 
 }

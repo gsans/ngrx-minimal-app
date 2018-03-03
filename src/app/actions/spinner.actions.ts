@@ -1,11 +1,16 @@
 import { Action } from '@ngrx/store';
 
 export enum SpinnerActionTypes {
-  SpinnerAction = '[Spinner] Action'
+  Show = '[Spinner] Show',
+  Hide = '[Spinner] Hide'
 }
 
-export class Spinner implements Action {
-  readonly type = SpinnerActionTypes.SpinnerAction;
+export class SpinnerShow implements Action {
+  readonly type = SpinnerActionTypes.Show;
 }
 
-export type SpinnerActions = Spinner;
+export class SpinnerHide implements Action {
+  readonly type = SpinnerActionTypes.Show;
+}
+
+export type SpinnerActions = SpinnerShow | SpinnerHide;

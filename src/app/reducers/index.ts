@@ -8,13 +8,16 @@ import {
 import { environment } from '../../environments/environment';
 import * as fromSpinner from './spinner.reducer';
 import { logger, meta } from './logger.reducer';
+import { namedReducer } from './named.reducer';
 
 export interface State {
-  spinner: boolean;
+  "spinner-top" : boolean;
+  "spinner-bottom" : boolean;
 }
 
 export const reducers: ActionReducerMap<State> = {
-  spinner: fromSpinner.reducer,
+  "spinner-top": namedReducer(fromSpinner.reducer, "spinner-top"),
+  "spinner-bottom": namedReducer(fromSpinner.reducer, "spinner-bottom"),
 };
 
 

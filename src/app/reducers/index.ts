@@ -7,8 +7,7 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 import * as fromSpinner from './spinner.reducer';
-import { logger } from './logger.reducer';
-import { meta } from './meta.reducer';
+import { logger, meta } from './logger.reducer';
 
 export interface State {
   spinner: boolean;

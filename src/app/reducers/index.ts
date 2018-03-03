@@ -9,12 +9,10 @@ import { environment } from '../../environments/environment';
 import * as fromSpinner from './spinner.reducer';
 
 export interface State {
-
   spinner: fromSpinner.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
-
   spinner: fromSpinner.reducer,
 };
 

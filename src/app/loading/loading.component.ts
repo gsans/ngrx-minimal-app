@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromStore from '../reducers/index';
 import { SpinnerShow } from '../actions/spinner.actions';
@@ -12,14 +12,16 @@ import { map } from 'rxjs/operators';
 })
 export class LoadingComponent implements OnInit {
   loading: Observable<boolean>;
+  @Input() target: string;
+  @Input() color: string = "red";
 
-  constructor(private store: Store<fromStore.State>) { 
-    this.store.dispatch(new SpinnerShow());
-  }
+  constructor(private store: Store<fromStore.State>) { }
 
   ngOnInit() {
     this.loading = this.store.pipe(
-      map(state => state.spinner)
+      map(state => { 
+        return state[this.target];
+      })
     );
   }
 

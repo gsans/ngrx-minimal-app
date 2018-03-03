@@ -54,6 +54,9 @@
     }
   },
   "defaults": {
+    "schematics": {
+      "collection": "@ngrx/schematics"
+    },
     "styleExt": "css",
     "class": {
       "spec": false

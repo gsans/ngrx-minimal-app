@@ -1,15 +1,8 @@
 import { Action } from '@ngrx/store';
 
+export const initialState: boolean = false;
 
-export interface State {
-
-}
-
-export const initialState: State = {
-
-};
-
-export function reducer(state = initialState, action: Action): State {
+export function reducer(state = initialState, action: Action): boolean {
   switch (action.type) {
 
     default:

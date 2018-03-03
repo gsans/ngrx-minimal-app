@@ -4,6 +4,7 @@ import { SpinnerActions, SpinnerActionTypes } from '../actions/spinner.actions';
 export const initialState: boolean = false;
 
 export function reducer(state = initialState, action: SpinnerActions): boolean {
+  console.log('spinner reducer executes');
   switch (action.type) {
     case SpinnerActionTypes.Show: 
       return true;

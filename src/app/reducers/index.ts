@@ -7,6 +7,8 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 import * as fromSpinner from './spinner.reducer';
+import { logger } from './logger.reducer';
+import { meta } from './meta.reducer';
 
 export interface State {
   spinner: boolean;
@@ -17,4 +19,4 @@ export const reducers: ActionReducerMap<State> = {
 };
 
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<State>[] = !environment.production ? [meta, logger] : [];
